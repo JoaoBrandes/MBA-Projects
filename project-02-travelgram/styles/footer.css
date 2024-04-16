@@ -1,0 +1,12 @@
+footer {
+    display: flex;
+    padding-block: 24px;
+    margin-inline: 32px;
+    gap: 24px;
+
+    font: 14px/150% var(--font-family);
+}
+
+.copyright {
+    margin-right: auto;
+}
