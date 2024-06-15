@@ -1,0 +1,46 @@
+#giftSection {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--gray-100);
+    height: 6rem;
+    padding: 2rem;
+    gap: 16px;
+}
+
+.giftProgressSection {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+#giftIcon {
+    display: flex;
+}
+
+.progressArea {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 1rem;
+}
+
+progress {
+    display: flex;
+    flex: 1;
+    margin-top: 20px;
+    height: 10px;
+    border-radius: 9999px;
+}
+
+progress::-webkit-progress-bar {
+    border-radius: 9999px;
+    background: var(--gray-200);
+}
+
+progress::-webkit-progress-value {
+    border-radius: 9999px;
+    background: linear-gradient(90deg, #2DAA6E 0%, #2DAAAA 33.33%, #856CCF 66.67%, #D658B3 100%);
+
+}

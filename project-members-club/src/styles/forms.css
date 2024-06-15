@@ -1,0 +1,69 @@
+form {
+    display: flex;
+    width: 100%;
+    max-width: 400px;
+}
+
+.inputDiv {
+    display: flex;
+    width: 100%;
+    max-width: 400px;
+    flex-direction: row;
+
+    align-items: center;
+
+    /* This bit draws the box around it */
+    border: 1px solid var(--gray-400);
+
+    background-color: var(--gray-400);
+    color: var(--gray-500);
+    font: var(--text-md);
+    padding: 8px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.inputDiv:focus-within {
+    border: 1px solid var(--primary-pink);
+}
+
+button {
+    border: none;
+    background-color: transparent;
+}
+
+input {
+    flex-grow: 2;
+    border: none;
+    background-color: var(--gray-400);
+    font: var(--text-md);
+
+}
+
+input:focus {
+    outline: none;
+    background-color: var(--gray-400);
+}
+
+input:internal-autofill-selected {
+    background-color: var(--gray-400)
+}
+
+#submitButton {
+    width: 32px;
+    height: 32px;
+    padding: 8px;
+    background-color: var(--gray-700);
+    border-radius: 12px;
+}
+
+#submitButton:hover {
+    background-color: var(--gray-500);
+}
+
+#rightSide {
+    display: flex;
+    flex: 1;
+    gap: 1rem;
+    flex-direction: column;
+}

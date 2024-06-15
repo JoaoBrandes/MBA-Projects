@@ -1,0 +1,78 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+
+:root {
+    --font-family: 'Oxygen', sans-serif;
+    --title-md: bold 1.5rem var(--font-family);
+    --title-sm: bold 1.125rem var(--font-family);
+    --subtitle-md: bold 0.85rem var(--font-family);
+    --subtitle-sm: bold 0.625rem var(--font-family);
+    --text-md: 1rem var(--font-family);
+    --text-sm: 0.85rem var(--font-family);
+    --text-xs: 0.625rem var(--font-family);
+
+    --primary-pink: #D658B3;
+    --primary-green: #45B442;
+
+    --gray-700: #332B31;
+    --gray-600: #4A4448;
+    --gray-500: #756C71;
+    --gray-400: #D3CFD2;
+    --gray-300: #DFDCDF;
+    --gray-200: #E9E7E9;
+    --gray-100: #F4F1F2;
+    --white: #FFF;
+
+    --gradient: linear-gradient(90deg, #2DAA6E 0%, #2DAAAA 33.33%, #856CCF 66.67%, #D658B3 100%)
+}
+
+body {
+    background-color: var(--gray-300);
+    display: flex;
+    flex: 1;
+}
+
+#main {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem;
+    height: 100vh;
+}
+
+.card {
+    border-radius: 12px;
+    background-color: var(--gray-200);
+}
+
+.divider {
+    background-color: var(--gray-300);
+    width: 100%;
+    height: 1px;
+    border-radius: 50%;
+}
+
+.title {
+    font: var(--title-md);
+    color: var(--gray-600);
+}
+
+.subTitle {
+    font: var(--subtitle-md);
+    font-weight: bold;
+    color: var(--gray-500);
+}
+
+.text-sm {
+    font: var(--text-sm);
+    color: var(--gray-500);
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
