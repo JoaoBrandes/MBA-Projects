@@ -19,10 +19,13 @@ form.onsubmit = async (event) => {
     event.preventDefault();
 
     const memberData = await findMember();
-    console.log(memberData)
+    const error = document.getElementById("formError");
     if (!memberData) {
-        console.log("Nenhum usuário encontrado com esse ID");
+        error.style.display = "block";
+
         return;
+    } else {
+        error.style.display = "none";
     }
     memberInfo.style.display = "flex";
     buildMemberProfile(memberData);
@@ -32,22 +35,37 @@ form.onsubmit = async (event) => {
 }
 
 const findMember = async () => {
-
-    const memberID = memberInput.value;
-
-    const memberData = memberList.find((member) => {
-        if (member.id.includes(memberID)) {
-            return member
-        }
-    });
-    return memberData
+    try {
+        const memberID = memberInput.value;
+        const response = await fetch(`${baseURL}/clients/${memberID}`);
+        const data = await response.json();
+        return data;
+    } catch (err) {
+        return null;
+    }
 }
 
 const buildMemberProfile = (memberData) => {
-    const memberName = document.getElementById("memberName");
-    const memberSince = document.getElementById("memberSince");
+    const profileSection = document.getElementById("profileSection");
+    profileSection.innerHTML = "";
+    const profilePic = document.createElement("img");
+    profilePic.classList.add("profilePic");
+    profilePic.src = memberData.picture;
+
+    const userInfo = document.createElement("div");
+    userInfo.classList.add("userInfo");
+
+
+    const memberName = document.createElement("p");
     memberName.innerHTML = memberData.name;
+    memberName.classList.add("title");
+    const memberSince = document.createElement("p");
     memberSince.innerHTML = "Cliente desde " + memberData.clientSince;
+    memberSince.classList.add("subTitle");
+
+    userInfo.append(memberName, memberSince);
+
+    profileSection.append(profilePic, userInfo);
 }
 
 const buildMemberHistory = (memberData) => {
@@ -86,6 +104,10 @@ const buildFidelityStickers = (memberData) => {
     userId.innerHTML = "ID: " + memberData.id;
 
     const cuts = memberData.loyaltyCard.totalCuts;
+    if (cuts === 10) {
+        const giftsMessage = document.getElementById("giftMessage");
+        giftsMessage.innerHTML = "Parabéns, seu próximo corte é de graça!"
+    }
 
     const fidelityBody = document.getElementById("fidelity-body");
     fidelityBody.innerHTML = "";
@@ -93,15 +115,18 @@ const buildFidelityStickers = (memberData) => {
     for (i = 0; i < 10; i++) {
         const fidelityItem = document.createElement("div");
         fidelityItem.classList.add("fidelity-item");
-        if (i < cuts) {
+        if (i === 9) {
+            const gift = document.createElement("img");
+            if (cuts === 10) {
+                gift.src = "./src/assets/Gift.svg";
+            } else {
+                gift.src = "./src/assets/Gift-Gray.svg";
+            }
+            fidelityItem.append(gift);
+        } else if (i < cuts) {
             const fidelityCheck = document.createElement("img");
-            fidelityCheck.src = "./src/assets/PinCheck.svg";
+            fidelityCheck.src = "./src/assets/PinCheck.png";
             fidelityItem.append(fidelityCheck);
-        }
-        if (i === 9 && i >= cuts) {
-            const emptyGift = document.createElement("img");
-            emptyGift.src = "./src/assets/Gift-Gray.svg";
-            fidelityItem.append(emptyGift);
         }
 
         fidelityBody.append(fidelityItem);
@@ -135,10 +160,15 @@ const buildProgressBar = (memberData) => {
     progressArea.append(progressBar, label);
     giftProgressSection.append(progressTitle, progressArea);
 
+
+    const giftDiv = document.createElement("div");
+    giftDiv.classList.add("giftIcon");
+
     const gift = document.createElement("img");
     gift.src = "./src/assets/Gift.svg";
+    giftDiv.append(gift);
 
-    giftSection.append(giftProgressSection, gift)
+    giftSection.append(giftProgressSection, giftDiv)
 
 
 }

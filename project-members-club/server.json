@@ -4,6 +4,7 @@
       "id": "123-537-835-230",
       "name": "Natália Miranda",
       "clientSince": "18/09/2023",
+      "picture": "./src/assets/profile_pictures/miranda.png",
       "appointmentHistory": [
         {
           "date": "29/04/2024",
@@ -40,6 +41,7 @@
       "id": "456-245-699-104",
       "name": "Capitão Nascimento",
       "clientSince": "12/04/2023",
+      "picture": "./src/assets/profile_pictures/nascimento.png",
       "appointmentHistory": [
         {
           "date": "01/05/2024",
@@ -68,6 +70,7 @@
       "id": "789-114-876-908",
       "name": "Sansão",
       "clientSince": "15/07/2023",
+      "picture": "./src/assets/profile_pictures/sansao.png",
       "appointmentHistory": [
         {
           "date": "22/04/2024",
@@ -94,6 +97,59 @@
         "totalCuts": 5,
         "cutsNeeded": 10,
         "cutsRemaining": 5
+      }
+    },
+    {
+      "id": "321-111-222-333",
+      "name": "Homer",
+      "clientSince": "17/12/1989",
+      "picture": "./src/assets/profile_pictures/homer.png",
+      "appointmentHistory": [
+        {
+          "date": "18/04/2024",
+          "time": "16:30"
+        },
+        {
+          "date": "20/03/2024",
+          "time": "17:45"
+        },
+        {
+          "date": "20/02/2024",
+          "time": "15:15"
+        },
+        {
+          "date": "15/02/2024",
+          "time": "16:00"
+        },
+        {
+          "date": "10/02/2024",
+          "time": "16:00"
+        },
+        {
+          "date": "05/02/2024",
+          "time": "16:00"
+        },
+        {
+          "date": "30/01/2024",
+          "time": "16:00"
+        },
+        {
+          "date": "25/01/2024",
+          "time": "16:00"
+        },
+        {
+          "date": "20/01/2024",
+          "time": "16:00"
+        },
+        {
+          "date": "15/01/2024",
+          "time": "16:00"
+        }
+      ],
+      "loyaltyCard": {
+        "totalCuts": 10,
+        "cutsNeeded": 10,
+        "cutsRemaining": 0
       }
     }
   ]

@@ -8,13 +8,13 @@
     gap: 0.5rem;
     padding: 1.5rem 1rem;
 
-
     .history-item {
         display: flex;
         width: 100%;
         justify-content: space-between;
         flex-direction: row;
         align-items: center;
+
     }
 
     .history-title {

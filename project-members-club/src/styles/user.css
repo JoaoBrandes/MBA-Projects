@@ -1,10 +1,8 @@
 #memberInfo {
     display: none;
     flex: 1;
-    width: 70%;
-    flex-direction: row;
     gap: 1rem;
-    margin-bottom: 3rem;
+    overflow: hidden;
 }
 
 @media (width < 60em) {
@@ -42,12 +40,15 @@
     gap: 16px;
 }
 
-#profilePic {
+.profilePic {
     width: 56px;
     height: 56px;
+    background: var(--gradient) border-box;
+    border: 3px solid transparent;
+    border-radius: 1rem;
 }
 
-#userInfo {
+.userInfo {
     display: flex;
     flex-direction: column;
 }

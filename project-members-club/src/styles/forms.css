@@ -1,5 +1,6 @@
 form {
     display: flex;
+    flex-direction: column;
     width: 100%;
     max-width: 400px;
 }
@@ -27,6 +28,13 @@ form {
     border: 1px solid var(--primary-pink);
 }
 
+#formError {
+    display: none;
+    color: red;
+    font: var(--text-md);
+    margin-top: 1rem;
+}
+
 button {
     border: none;
     background-color: transparent;
@@ -42,11 +50,7 @@ input {
 
 input:focus {
     outline: none;
-    background-color: var(--gray-400);
-}
-
-input:internal-autofill-selected {
-    background-color: var(--gray-400)
+    background-color: var(--gray-400) !important;
 }
 
 #submitButton {
