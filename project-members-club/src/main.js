@@ -22,7 +22,6 @@ form.onsubmit = async (event) => {
     const error = document.getElementById("formError");
     if (!memberData) {
         error.style.display = "block";
-
         return;
     } else {
         error.style.display = "none";
@@ -106,7 +105,8 @@ const buildFidelityStickers = (memberData) => {
     const cuts = memberData.loyaltyCard.totalCuts;
     if (cuts === 10) {
         const giftsMessage = document.getElementById("giftMessage");
-        giftsMessage.innerHTML = "Parabéns, seu próximo corte é de graça!"
+        giftsMessage.innerHTML = "Parabéns! Seu próximo corte é gratuito!"
+        alert("Parabéns! Seu próximo corte é gratuito!")
     }
 
     const fidelityBody = document.getElementById("fidelity-body");
