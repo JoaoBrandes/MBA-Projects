@@ -5,25 +5,33 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:test": "vite --port 5078 --mode test",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "pretty": "prettier --write \"./**/*.{js,jsx,mjs,cjs,ts,tsx,json}\""
+    "pretty": "prettier --write \"./**/*.{js,jsx,mjs,cjs,ts,tsx,json}\"",
+    "test": "vitest"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
     "@radix-ui/react-dialog": "^1.1.1",
     "@radix-ui/react-dropdown-menu": "^2.1.1",
     "@radix-ui/react-label": "^2.1.0",
+    "@radix-ui/react-popover": "^1.1.1",
     "@radix-ui/react-select": "^2.1.1",
     "@radix-ui/react-separator": "^1.1.0",
     "@radix-ui/react-slot": "^1.0.2",
+    "@tanstack/react-query": "^5.50.1",
+    "axios": "^1.7.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
+    "date-fns": "^3.6.0",
+    "happy-dom": "^14.12.3",
     "localforage": "^1.10.0",
     "lucide-react": "^0.295.0",
     "match-sorter": "^6.3.4",
     "react": "^18.2.0",
+    "react-day-picker": "^8.10.1",
     "react-dom": "^18.2.0",
     "react-helmet-async": "^2.0.5",
     "react-hook-form": "^7.52.1",
@@ -37,9 +45,14 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.6.0",
+    "@playwright/test": "^1.45.2",
+    "@testing-library/dom": "^10.3.2",
+    "@testing-library/jest-dom": "^6.4.6",
+    "@testing-library/react": "^16.0.0",
+    "@testing-library/user-event": "^14.5.2",
     "@types/node": "^20.10.4",
-    "@types/react": "^18.2.43",
-    "@types/react-dom": "^18.2.17",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
     "@typescript-eslint/eslint-plugin": "^7.13.1",
     "@typescript-eslint/parser": "^7.13.1",
     "@vitejs/plugin-react": "^4.2.1",
@@ -51,12 +64,19 @@
     "eslint-plugin-react-refresh": "^0.4.7",
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "globals": "^15.8.0",
+    "msw": "^2.3.2",
     "postcss": "^8.4.32",
     "prettier": "3.3.2",
     "prettier-plugin-tailwindcss": "^0.5.14",
     "tailwindcss": "^3.3.6",
     "typescript": "^5.2.2",
     "typescript-eslint": "^7.15.0",
-    "vite": "^5.0.8"
+    "vite": "^5.0.8",
+    "vitest": "^2.0.3"
+  },
+  "msw": {
+    "workerDirectory": [
+      "public"
+    ]
   }
 }
